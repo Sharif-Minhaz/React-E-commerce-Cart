@@ -7,7 +7,6 @@ export const products = [
 		image: "/images/blue-t-shirt.webp",
 		flipImage: "/images/blue-t-shirt-flip.webp",
 	},
-	// from here
 	{
 		id: "e534-3wsl",
 		name: "Gap T-shirt",
@@ -21,8 +20,8 @@ export const products = [
 		name: "Loose T-shirt",
 		price: 4.27,
 		size: "L",
-		image: "/images/loose-t-shirt.webp",
-		flipImage: "/images/loose-t-shirt-flip.webp",
+		image: "/images/loose-black-t-shirt.webp",
+		flipImage: "/images/loose-black-t-shirt-flip.webp",
 	},
 	{
 		id: "e3s4-3w3sl",
@@ -50,10 +49,10 @@ export const products = [
 	},
 	{
 		id: "3e34-39wsl",
-		name: "Blue T-shirt",
+		name: "Turtle T-shirt",
 		price: 14.78,
 		size: "XXL",
-		image: "/images/blue-t-shirt.webp",
-		flipImage: "/images/blue-t-shirt-flip.webp",
+		image: "/images/turtle-t-shirt.webp",
+		flipImage: "/images/turtle-t-shirt-flip.webp",
 	},
 ];

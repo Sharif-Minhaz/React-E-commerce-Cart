@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import "./App.css";
 import { products } from "../data/data";
 import Loading from "../components/loading/Loading";
 import Navbar from "../components/navbar/Navbar";
+import Products from "../components/products/Products";
 
 class App extends Component {
 	state = {
@@ -27,13 +29,7 @@ class App extends Component {
 		return (
 			<>
 				<Navbar />
-				{this.state.isLoading ? (
-					<Loading />
-				) : (
-					<div>
-						<img src={this.state.data[0].image} alt="t-shirt" />
-					</div>
-				)}
+				{this.state.isLoading ? <Loading /> : <Products data={this.state.data} />}
 			</>
 		);
 	}

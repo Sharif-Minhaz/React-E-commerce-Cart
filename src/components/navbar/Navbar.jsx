@@ -8,16 +8,16 @@ function Navbar(props) {
 				<div className="">
 					<ul className="navbar-nav me-auto mb-0">
 						<li className="nav-item">
-							<button>M</button>
+							<button className="btn-secondary">M</button>
 						</li>
 						<li className="nav-item">
-							<button>L</button>
+							<button className="btn-secondary">L</button>
 						</li>
 						<li className="nav-item">
-							<button>XL</button>
+							<button className="btn-secondary">XL</button>
 						</li>
 						<li className="nav-item">
-							<button>XXL</button>
+							<button className="btn-secondary">XXL</button>
 						</li>
 					</ul>
 				</div>

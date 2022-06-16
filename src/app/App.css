@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+nav {
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+nav ul {
+	display: flex;
+	gap: 13px;
+}
+nav ul li button {
+	all: unset;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	text-align: center;
+}
+
+.product-name {
+	text-align: center;
+}
+.product-name::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 26px;
+    height: 2px;
+    background-color: #EABF00;
+    bottom: -5px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.bolding {
+    font-size: 22px;
+    font-weight: bold;
+}
+button.add-to-cart {
+	background-color: black;
+	color: white;
+    padding: 15px;
+    transition: 0.4s;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    border: none;
+}
+button.add-to-cart:hover {
+    background-color: #EABF00;
+}
