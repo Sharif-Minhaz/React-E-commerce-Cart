@@ -11,18 +11,35 @@ class App extends Component {
 		data: [],
 		isLoading: true,
 		category: ["M", "L", "XL", "XXL"],
+		cartsProduct: [
+			{
+				id: "s3kk-987",
+				name: "Batman T-shirt",
+				des: "Really Cool T-shirt",
+				price: 23.9,
+				size: "XL",
+				image: "/images/batman-t-shirt.webp",
+				flipImage: "/images/batman-t-shirt-flip.webp",
+			},
+		],
 	};
 
 	componentDidMount() {
 		this.setState({ data: products, isLoading: false });
 	}
 
+	setProductToCart = (prodId) => {};
+
 	render() {
 		return (
 			<>
 				<Navbar />
-				<SidePanel />
-				{this.state.isLoading ? <Loading /> : <Products data={this.state.data} />}
+				<SidePanel cartsProduct={this.state.cartsProduct} />
+				{this.state.isLoading ? (
+					<Loading />
+				) : (
+					<Products data={this.state.data} setProductToCart={this.setProductToCart} />
+				)}
 			</>
 		);
 	}

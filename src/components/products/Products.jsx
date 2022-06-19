@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import shortid from "shortid";
 import SingleProduct from "./SingleProduct";
 
-function Products({ data }) {
+function Products({ data, setProductToCart }) {
 	return (
 		<div className="container">
 			<div className="row">

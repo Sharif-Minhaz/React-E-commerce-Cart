@@ -2,6 +2,7 @@ export const products = [
 	{
 		id: "s3kk-987",
 		name: "Batman T-shirt",
+		des: "Really Cool T-shirt",
 		price: 23.9,
 		size: "XL",
 		image: "/images/batman-t-shirt.webp",
@@ -10,6 +11,7 @@ export const products = [
 	{
 		id: "e34-3wsl",
 		name: "Blue T-shirt",
+		des: "Original Blue T-shirt",
 		price: 4.78,
 		size: "XL",
 		image: "/images/blue-t-shirt.webp",
@@ -18,6 +20,7 @@ export const products = [
 	{
 		id: "e534-3wsl",
 		name: "Gap T-shirt",
+		des: "Gap brand T-shirt",
 		price: 5.72,
 		size: "L",
 		image: "/images/gap-t-shirt.webp",
@@ -26,6 +29,7 @@ export const products = [
 	{
 		id: "e434-3w8sl",
 		name: "Loose T-shirt",
+		des: "Lossy black T-shirt",
 		price: 4.27,
 		size: "L",
 		image: "/images/loose-black-t-shirt.webp",
@@ -34,6 +38,7 @@ export const products = [
 	{
 		id: "e3s4-3w3sl",
 		name: "Mike T-shirt",
+		des: "Mike Brand T-shirt",
 		price: 78.38,
 		size: "M",
 		image: "/images/mike-t-shirt.webp",
@@ -42,6 +47,7 @@ export const products = [
 	{
 		id: "534-3ws3l",
 		name: "Mink T-shirt",
+		des: "Colorful Cool T-shirt",
 		price: 4.78,
 		size: "M",
 		image: "/images/mink-t-shirt.webp",
@@ -49,7 +55,8 @@ export const products = [
 	},
 	{
 		id: "e534-35wsl",
-		name: "Semi Purple T-shirt",
+		name: "Purple T-shirt",
+		des: "Thanos color T-shirt",
 		price: 23.78,
 		size: "M",
 		image: "/images/semi-purple-t-shirt.webp",
@@ -58,6 +65,7 @@ export const products = [
 	{
 		id: "3e34-39wsl",
 		name: "Turtle T-shirt",
+		des: "Lazy Turtle T-shirt",
 		price: 14.78,
 		size: "XXL",
 		image: "/images/turtle-t-shirt.webp",
