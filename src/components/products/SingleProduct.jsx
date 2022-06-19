@@ -2,8 +2,9 @@ import React from "react";
 
 function SingleProduct({ product }) {
 	return (
-		<div className="col-xl-3 col-md-4 col-12 mb-5">
+		<div className="col-xl-3 col-md-4 col-12 mb-5 single-product-card">
 			<img className="w-100" src={product.image} alt="profile_img" />
+			<img className="w-100" src={product.flipImage} alt="profile_img" />
 			<div className="position-relative">
 				<p className="product-name">{product.name}</p>
 			</div>
