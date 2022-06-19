@@ -1,5 +1,13 @@
 export const products = [
 	{
+		id: "s3kk-987",
+		name: "Batman T-shirt",
+		price: 23.9,
+		size: "XL",
+		image: "/images/batman-t-shirt.webp",
+		flipImage: "/images/batman-t-shirt-flip.webp",
+	},
+	{
 		id: "e34-3wsl",
 		name: "Blue T-shirt",
 		price: 4.78,
