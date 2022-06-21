@@ -3,7 +3,7 @@ export const products = [
 		id: "s3kk-987",
 		name: "Batman T-shirt",
 		des: "Really Cool T-shirt",
-		price: 23.9,
+		price: 23.91,
 		size: "XL",
 		image: "/images/batman-t-shirt.webp",
 		flipImage: "/images/batman-t-shirt-flip.webp",

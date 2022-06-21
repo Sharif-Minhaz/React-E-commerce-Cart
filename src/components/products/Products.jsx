@@ -8,7 +8,11 @@ function Products({ data, setProductToCart }) {
 			<div className="row">
 				<p className="py-4">{8} product(s) found.</p>
 				{data.map((product) => (
-					<SingleProduct key={shortid.generate()} product={product} />
+					<SingleProduct
+						key={shortid.generate()}
+						product={product}
+						setProductToCart={setProductToCart}
+					/>
 				))}
 			</div>
 		</div>

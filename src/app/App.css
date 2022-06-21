@@ -71,23 +71,27 @@ button.checkout-btn:hover {
 .side-panel-close {
 	right: -400px;
 }
-.panel-body,.cart-product-body {
+.panel-body,
+.cart-product-body {
 	position: relative;
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	gap: 15px;
+	gap: 40px;
 	padding: 20px 0px 20px 0px;
 	/* overflow-y: auto; */
 	/* margin-bottom: 135px; */
 }
-.cart-product-body::before {
+.cart-product-body .breaker {
+	position: relative;
+}
+.cart-product-body .breaker::before {
 	content: "";
 	height: 2px;
 	width: 100%;
 	background-color: rgba(0, 0, 0, 0.2);
 	position: absolute;
-	top: 0px;
+	top: -22px;
 }
 .panel-body .img-info {
 	width: 250px;
@@ -174,10 +178,39 @@ button.checkout-btn:hover {
 	opacity: 0.7;
 }
 
+/*========== product amount info ==========*/
 .prod-cal {
 	text-align: right;
 }
+.prod-cal span:first-child {
+	color: rgb(83, 83, 83);
+	transition: color 0.3s;
+	font-weight: bolder;
+	cursor: pointer;
+	user-select: none;
+}
+.prod-cal span:first-child:hover {
+	color: azure;
+}
+.control-count {
+	display: flex;
+	gap: 4px;
+}
+.control-count button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 25px;
+	height: 25px;
+	background-color: #000;
+	color: azure;
+	border: transparent;
+}
+.control-count button[disabled] {
+	background-color: #49474f;
+}
 
+/*========== responsive part ==========*/
 @media (max-width: 499px) {
 	.side-panel {
 		width: 320px;
