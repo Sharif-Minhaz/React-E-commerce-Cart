@@ -30,8 +30,8 @@ class SidePanel extends Component {
 				)}
 				{/*--------------------- Cart component end ----------------------*/}
 				<div className="panel-header text-light text-center py-4 ms-4">Cart</div>
+				<p className="text-center text-light">{this.props.cartsProduct.length === 0 && "Add some products in the cart :)"}</p>
 				<div className="panel-body text-light text-center p-3">
-					{this.props.cartsProduct.length === 0 && "add some products in the cart :)"}
 					{/*------------ panel body component start -------------------*/}
 					<PanelBody
 						cartsProduct={this.props.cartsProduct}

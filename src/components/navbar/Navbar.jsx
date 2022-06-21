@@ -1,6 +1,7 @@
 import React from "react";
+import CategoryBtn from "./CategoryBtn";
 
-function Navbar(props) {
+function Navbar({ handleSizes }) {
 	return (
 		<nav className="navbar navbar-expand navbar-light bg-light sticky-top">
 			<div className="container justify-content-between">
@@ -8,16 +9,16 @@ function Navbar(props) {
 				<div className="">
 					<ul className="navbar-nav me-auto mb-0">
 						<li className="nav-item">
-							<button className="btn-secondary">M</button>
+							<CategoryBtn handleSizes={handleSizes}>M</CategoryBtn>
 						</li>
 						<li className="nav-item">
-							<button className="btn-secondary">L</button>
+							<CategoryBtn handleSizes={handleSizes}>L</CategoryBtn>
 						</li>
 						<li className="nav-item">
-							<button className="btn-secondary">XL</button>
+							<CategoryBtn handleSizes={handleSizes}>XL</CategoryBtn>
 						</li>
 						<li className="nav-item">
-							<button className="btn-secondary">XXL</button>
+							<CategoryBtn handleSizes={handleSizes}>XXL</CategoryBtn>
 						</li>
 					</ul>
 				</div>
