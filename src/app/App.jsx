@@ -30,8 +30,9 @@ class App extends Component {
 			this.setState({ category: currCategory });
 			this.getFilteredProduct(currCategory);
 		} else {
-			this.setState({ category: [...this.state.category, size] });
-			this.getFilteredProduct(this.state.category);
+			this.setState({ category: [size, ...this.state.category] }, () =>
+				this.getFilteredProduct(this.state.category)
+			);
 		}
 	};
 

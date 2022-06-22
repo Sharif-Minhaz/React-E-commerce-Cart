@@ -102,6 +102,7 @@ button.checkout-btn:hover {
 .panel-body {
 	height: 316px;
 	overflow-y: auto;
+	padding-top: 2px !important;
 }
 .panel-body,
 .cart-product-body {
