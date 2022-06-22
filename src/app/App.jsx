@@ -8,6 +8,7 @@ import Products from "../components/products/Products";
 
 class App extends Component {
 	state = {
+		cachedData: [...products],
 		data: [],
 		isLoading: true,
 		category: ["M", "L", "XL", "XXL"],
@@ -17,10 +18,6 @@ class App extends Component {
 
 	componentDidMount() {
 		this.setState({ data: products, isLoading: false });
-	}
-
-	componentDidUpdate() {
-		console.log(this.state.category);
 	}
 
 	toggleSidePanel = () => {
@@ -39,7 +36,7 @@ class App extends Component {
 	};
 
 	getFilteredProduct = (categories) => {
-		const data = this.state.data.filter((prod) => categories.includes(prod.size));
+		const data = this.state.cachedData.filter((prod) => categories.includes(prod.size));
 		this.setState({ data });
 	};
 
