@@ -19,6 +19,10 @@ class App extends Component {
 		this.setState({ data: products, isLoading: false });
 	}
 
+	componentDidUpdate() {
+		console.log(this.state.category);
+	}
+
 	toggleSidePanel = () => {
 		this.setState({ isSidePanelOpen: !this.state.isSidePanelOpen });
 	};
@@ -27,20 +31,15 @@ class App extends Component {
 		if (this.state.category.includes(size)) {
 			const currCategory = this.state.category.filter((cat) => cat !== size);
 			this.setState({ category: currCategory });
-			this.getFilteredProduct(this.state.category);
+			this.getFilteredProduct(currCategory);
 		} else {
 			this.setState({ category: [...this.state.category, size] });
 			this.getFilteredProduct(this.state.category);
 		}
 	};
 
-	componentDidUpdate() {
-		console.log(this.state.category);
-	}
-
-	getFilteredProduct = (size) => {
-		// array
-		const data = this.state.data.filter((prod) => size.includes(prod.size));
+	getFilteredProduct = (categories) => {
+		const data = this.state.data.filter((prod) => categories.includes(prod.size));
 		this.setState({ data });
 	};
 

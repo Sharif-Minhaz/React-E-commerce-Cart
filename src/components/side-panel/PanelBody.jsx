@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import shortid from "shortid";
 import SingleCartProduct from "./SingleCartProduct";
 
 class PanelBody extends Component {
@@ -18,7 +17,7 @@ class PanelBody extends Component {
 			<div className="cart-product-body flex-column">
 				{this.props.cartsProduct.map((product) => (
 					<SingleCartProduct
-						key={shortid.generate()}
+						key={product.id}
 						product={product}
 						removeProductFromCart={this.props.removeProductFromCart}
 					/>

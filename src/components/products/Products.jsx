@@ -1,15 +1,14 @@
 import React from "react";
-import shortid from "shortid";
 import SingleProduct from "./SingleProduct";
 
 function Products({ data, setProductToCart }) {
 	return (
 		<div className="container">
 			<div className="row">
-				<p className="py-4">{8} product(s) found.</p>
+				<p className="py-4">{data.length} product(s) found.</p>
 				{data.map((product) => (
 					<SingleProduct
-						key={shortid.generate()}
+						key={product.id}
 						product={product}
 						setProductToCart={setProductToCart}
 					/>

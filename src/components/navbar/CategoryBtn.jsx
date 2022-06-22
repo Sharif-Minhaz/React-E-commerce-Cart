@@ -12,7 +12,7 @@ class CategoryBtn extends Component {
 	render() {
 		return (
 			<button
-				className={this.state.isActive ? "active" : "btn-secondary"}
+				className={this.state.isActive ? "btn-secondary" : "active"}
 				onClick={() => {
 					this.props.handleSizes(this.props.children);
 					this.toggleState();
