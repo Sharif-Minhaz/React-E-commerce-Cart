@@ -13,6 +13,7 @@ class App extends Component {
 		isLoading: true,
 		category: ["M", "L", "XL", "XXL"],
 		cartsProduct: [],
+		checkoutPrice: 0,
 		isSidePanelOpen: false,
 	};
 
@@ -45,14 +46,40 @@ class App extends Component {
 		const isPresent = this.state.cartsProduct.find((product) => product.id === prodId);
 		if (typeof isPresent === "undefined") {
 			const product = this.state.data.find((product) => product.id === prodId);
-			this.setState({
-				cartsProduct: [...this.state.cartsProduct, product],
-				isSidePanelOpen: true,
-			});
+			// add count and totalPrice value property with default value
+			product.count = 1;
+			product.totalPrice = product.price;
+			this.setState(
+				{
+					cartsProduct: [...this.state.cartsProduct, product],
+					isSidePanelOpen: true,
+				},
+				() => this.setCheckoutPrice()
+			);
 		} else {
 			this.setState({ isSidePanelOpen: true });
 			alert("Product already in cart.");
 		}
+	};
+
+	setCheckoutPrice = () => {
+		let prices = [];
+		this.state.cartsProduct.forEach((prod) => {
+			prices.push(prod.totalPrice);
+		});
+		this.setState({
+			checkoutPrice: Number(prices.reduce((prev, curr) => prev + curr).toFixed(2)),
+		});
+	};
+
+	setCountPrice = (prodId, count, totalPrice) => {
+		const product = this.state.cartsProduct.find((prod) => prod.id === prodId);
+		if (typeof product !== "undefined") {
+			product.count = count;
+			product.totalPrice = totalPrice;
+		}
+		// empty re-render for updating changes
+		this.setState({ cartsProduct: this.state.cartsProduct }, () => this.setCheckoutPrice());
 	};
 
 	removeProductFromCart = (prodId) => {
@@ -69,6 +96,8 @@ class App extends Component {
 					isSidePanelOpen={this.state.isSidePanelOpen}
 					toggleSidePanel={this.toggleSidePanel}
 					removeProductFromCart={this.removeProductFromCart}
+					setCountPrice={this.setCountPrice}
+					checkoutPrice={this.state.checkoutPrice}
 				/>
 				{this.state.isLoading ? (
 					<Loading />

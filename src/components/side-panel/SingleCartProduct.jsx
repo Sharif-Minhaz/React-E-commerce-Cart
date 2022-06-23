@@ -1,4 +1,4 @@
-import React, { Component,  } from "react";
+import React, { Component } from "react";
 
 class SingleCartProduct extends Component {
 	state = {
@@ -12,20 +12,26 @@ class SingleCartProduct extends Component {
 		});
 	}
 
-	handleDec = (price) => {
+	handleDec = (prodId, price) => {
 		this.state.quantity > 1 &&
-			this.setState({
-				quantity: this.state.quantity - 1,
-				totalPrice: Number((this.state.totalPrice - price).toFixed(2)),
-			});
+			this.setState(
+				{
+					quantity: this.state.quantity - 1,
+					totalPrice: Number((this.state.totalPrice - price).toFixed(2)),
+				},
+				() => this.props.setCountPrice(prodId, this.state.quantity, this.state.totalPrice)
+			);
 	};
 
-	handleInc = (price) => {
+	handleInc = (prodId, price) => {
 		this.state.quantity < 10 &&
-			this.setState({
-				quantity: this.state.quantity + 1,
-				totalPrice: Number((this.state.totalPrice + price).toFixed(2)),
-			});
+			this.setState(
+				{
+					quantity: this.state.quantity + 1,
+					totalPrice: Number((this.state.totalPrice + price).toFixed(2)),
+				},
+				() => this.props.setCountPrice(prodId, this.state.quantity, this.state.totalPrice)
+			);
 	};
 
 	render() {
@@ -58,13 +64,13 @@ class SingleCartProduct extends Component {
 					<div className="control-count">
 						<button
 							disabled={this.state.quantity > 1 ? false : true}
-							onClick={() => this.handleDec(product.price)}
+							onClick={() => this.handleDec(product.id, product.price)}
 						>
 							-
 						</button>
 						<button
 							disabled={this.state.quantity < 10 ? false : true}
-							onClick={() => this.handleInc(product.price)}
+							onClick={() => this.handleInc(product.id, product.price)}
 						>
 							+
 						</button>
