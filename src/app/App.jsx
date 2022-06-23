@@ -68,7 +68,7 @@ class App extends Component {
 			prices.push(prod.totalPrice);
 		});
 		this.setState({
-			checkoutPrice: Number(prices.reduce((prev, curr) => prev + curr).toFixed(2)),
+			checkoutPrice: Number(prices.reduce((prev, curr) => prev + curr, 0).toFixed(2)) || 0,
 		});
 	};
 
@@ -84,7 +84,7 @@ class App extends Component {
 
 	removeProductFromCart = (prodId) => {
 		const products = this.state.cartsProduct.filter((product) => product.id !== prodId);
-		this.setState({ cartsProduct: products });
+		this.setState({ cartsProduct: products }, () => this.setCheckoutPrice());
 	};
 
 	render() {

@@ -44,7 +44,9 @@ function SidePanel({
 				<button
 					className="checkout-btn"
 					onClick={() =>
-						checkoutPrice > 0 && alert(`Checkout - Subtotal: $ ${checkoutPrice}`)
+						checkoutPrice > 0
+							? alert(`Checkout - Subtotal: $${checkoutPrice}`)
+							: alert("First add some product(s) into the cart to checkout :)")
 					}
 				>
 					Checkout
